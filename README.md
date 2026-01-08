@@ -8,6 +8,8 @@ Weight: milligram, gram, kilogram, ounce, pound.
 
 Temperature: Celsius, Fahrenheit, Kelvin.
 
+This project is an exercise from the roadmap.sh project: roadmap.sh/projects/unit-converter 📚
+
 ## Available pages
 - `/length` — Length converter UI
 - `/weight` — Weight converter UI
