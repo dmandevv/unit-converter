@@ -1,0 +1,22 @@
+# Use the official Go image to build the application
+FROM golang:1.22-alpine AS builder
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
+
+COPY . .
+RUN go build -o /app/unit-converter
+
+# Use a minimal base image for the final container
+FROM alpine:latest
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the built binary from the builder stage
+COPY --from=builder /app/unit-converter .
+
+# Command to run the executable
+CMD ["./unit-converter"]
