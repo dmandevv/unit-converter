@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Unit Converter weight</title>
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-<ul>
-  <li><a href="#length">Length</a></li>
-  <li><a href="#weight">Weight</a></li>
-  <li><a href="#temperature">Temperature</a></li>
-</ul>
+    <h1>Weight Converter</h1>
+    <ul>
+        <li><a href="/length">Length</a></li>
+        <li><a href="/weight">Weight</a></li>
+        <li><a href="/temperature">Temperature</a></li>
+    </ul>
+    <form action="/form/weight" method="POST">
+        <br><label for="weight">Enter the weight to convert</label><br>
+        <input type="number" step="any" value="1" id="weight" name="weight"><br>
+        <br><label for="weight">Unit to Convert from</label><br>
+        <select id="unit_from" name="unit_from">
+            <option value="milligram">milligram</option>
+            <option value="gram">gram</option>
+            <option value="kilogram">kilogram</option>
+            <option value="ounce">ounce</option>
+            <option value="pound">pound</option>
+        </select><br>
+        <br><label for="weight">Unit to Convert to</label><br>
+        <select id="unit_to" name="unit_to">
+            <option value="milligram">milligram </option>
+            <option value="gram">gram</option>
+            <option value="kilogram">kilogram</option>
+            <option value="ounce">ounce</option>
+            <option value="pound">pound</option>
+        </select><br><br>
+        <input type="submit" value="Convert" target="_self">
+    </form>
 </body>
 </html>

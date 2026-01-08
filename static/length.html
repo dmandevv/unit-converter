@@ -3,65 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Unit Converter</title>
-    <style>
-    ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
-    }
-
-    li {
-    float: left;
-    }
-
-    li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    font-weight: bold;
-
-    }
-
-    li a:hover {
-    background-color: #111111;
-    }
-
-    label {
-        font-weight: bold;
-    }
-
-    input[type="text"], select {
-        width: 150px;
-        padding: 8px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        font: inherit;
-    }
-    input[type="submit"] {
-        background-color: #45a048;
-        color: rgb(0, 0, 0);
-        padding: 10px 20px;
-        border: 2px solid black;
-        border-radius: 12px;
-        cursor: pointer;
-        font: inherit;
-        font-weight: bold;
-    }
-    </style>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
+    <h1>Length Converter</h1>
     <ul>
         <li><a href="/length">Length</a></li>
         <li><a href="/weight">Weight</a></li>
         <li><a href="/temperature">Temperature</a></li>
     </ul>
-    <form action="/form" method="POST">
+    <form action="/form/length" method="POST">
         <br><label for="length">Enter the length to convert</label><br>
-        <input type="text" id="length" name="length"><br>
+        <input type="number" step="any" value="1" id="length" name="length"><br>
         <br><label for="length">Unit to Convert from</label><br>
         <select id="unit_from" name="unit_from">
             <option value="millimeter">millimeter</option>

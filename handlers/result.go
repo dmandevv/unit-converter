@@ -6,7 +6,7 @@ import (
 )
 
 func ResultHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("static/result.html")
+	tmpl, err := template.ParseFiles("./static/result.html")
 	if err != nil {
 		http.Error(w, "template parse error", http.StatusInternalServerError)
 		return

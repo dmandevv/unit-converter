@@ -10,12 +10,18 @@ import (
 )
 
 func main() {
+
+	fs := http.FileServer(http.Dir("./static"))
+
 	mux := http.NewServeMux()
+	mux.Handle("/static/", http.StripPrefix("/static/", fs))
 	mux.HandleFunc("/", handlers.LengthHandler)
 	mux.HandleFunc("/length", handlers.LengthHandler)
 	mux.HandleFunc("/weight", handlers.WeightHandler)
 	mux.HandleFunc("/temperature", handlers.TemperatureHandler)
-	mux.HandleFunc("/form", handlers.FormHandler)
+	mux.HandleFunc("/form/length", handlers.FormLengthHandler)
+	mux.HandleFunc("/form/weight", handlers.FormWeightHandler)
+	mux.HandleFunc("/form/temperature", handlers.FormTemperatureHandler)
 	mux.HandleFunc("/result", handlers.ResultHandler)
 
 	srv := &http.Server{
