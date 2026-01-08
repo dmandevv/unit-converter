@@ -23,7 +23,7 @@ WORKDIR /app
 # Copy the built binary from the 'builder' stage
 COPY --from=builder /app/unit-converter-server .
 
-# Expose the port your Go server listens on
+# Expose the port your Go server listens on (8080 default)
 EXPOSE 9090
 
 # Command to run the executable when the container starts
